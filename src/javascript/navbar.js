@@ -6,7 +6,6 @@ export function navbar() {
     navbarDiv.style.justifyContent = 'space-between';
     navbarDiv.style.alignItems = 'center';
     navbarDiv.style.padding = '20px 20px';
-    navbarDiv.style.gridArea = '1/1/2/3';
 
     // Calling the different functions for the links
     logo();

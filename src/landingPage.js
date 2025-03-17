@@ -22,6 +22,7 @@ export function landingPage() {
         // Calling the different functions for the introduction part of the restaurant
         introHeading();
         introPara();
+        buttons();
 
         // Creating the heading for the introduction
         function introHeading() {
@@ -35,11 +36,70 @@ export function landingPage() {
         // Creating the paragraph for the introduction
         function introPara() {
             const introPara = document.createElement('p');
-            introPara.textContent = 'We are a restaurant which serves the best food in town. We have a variety of dishes which you can enjoy with your friends and family. We have a team of chefs who are experts in their field and will make sure that you have a great experience at our restaurant.';
+            introPara.textContent = 'We are a restaurant which serves the best food in town. We have a variety of dishes which you can enjoy with your friends and family. We have a team of chefs who are experts in their field and will make sure that you have a great experience at our restaurant. Below, you can find the buttons that would help you navigate through our website.';
             introPara.style.fontSize = '1.5em';
-            introPara.style.textAlign = 'right';
+            introPara.style.textAlign = 'left';
             introPara.style.margin = '20px 0';
             introDiv.appendChild(introPara);
+        }
+
+        function buttons() {
+            const buttons = document.createElement('div');
+            buttons.style.display = 'flex';
+            buttons.style.marginTop = '20px';
+            introDiv.appendChild(buttons);
+
+            // Calling the different functions for the buttons
+            aboutButton();
+            menuButton();
+            contactButton();
+
+            // Creating the about button
+            function aboutButton() {
+                const aboutButton = document.createElement('button');
+                aboutButton.textContent = 'About';
+                aboutButton.style.backgroundColor = '#EC5228';
+                aboutButton.style.marginRight = '20px';
+                aboutButton.style.borderRadius = '5px';
+                aboutButton.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; 
+                aboutButton.style.color = '#EFEFEF';
+                aboutButton.style.border = 'none';
+                aboutButton.style.padding = '10px 20px';
+                aboutButton.style.cursor = 'pointer';
+                aboutButton.style.fontSize = '1.5em';
+                buttons.appendChild(aboutButton);
+            }
+
+            // Creating the menu button
+            function menuButton() {
+                const menuButton = document.createElement('button');
+                menuButton.textContent = 'Menu';
+                menuButton.style.backgroundColor = '#EC5228';
+                menuButton.style.marginRight = '20px';
+                menuButton.style.color = '#EFEFEF';
+                menuButton.style.borderRadius = '5px';
+                menuButton.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; 
+                menuButton.style.border = 'none';
+                menuButton.style.padding = '10px 20px';
+                menuButton.style.cursor = 'pointer';
+                menuButton.style.fontSize = '1.5em';
+                buttons.appendChild(menuButton);
+            }
+
+            // Creating the contact button
+            function contactButton() {
+                const contactButton = document.createElement('button');
+                contactButton.textContent = 'Contact';
+                contactButton.style.backgroundColor = '#EC5228';
+                contactButton.style.borderRadius = '5px';
+                contactButton.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)'; 
+                contactButton.style.color = '#EFEFEF';
+                contactButton.style.border = 'none';
+                contactButton.style.padding = '10px 20px';
+                contactButton.style.cursor = 'pointer';
+                contactButton.style.fontSize = '1.5em';
+                buttons.appendChild(contactButton);
+            }
         }
     }
     

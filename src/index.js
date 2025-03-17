@@ -21,3 +21,4 @@ body.appendChild(headerNavBar);
 
 const landingPageContent = landingPage();
 body.appendChild(landingPageContent);
+

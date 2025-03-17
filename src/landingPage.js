@@ -1,10 +1,14 @@
 export function landingPage() {
+    // Created a div called landingPageDivContainer in which we will add the concent for the landing page
+    const landingPageDivContainer = document.createElement('div');
+
     // Created a div called landingPageDiv in which we will add the concent for the landing page
     const landingPageDiv = document.createElement('div');
     landingPageDiv.classList.add('landing-page');
-    landingPageDiv.style.display = 'grid';
-    landingPageDiv.style.gridTemplateColumns = '1fr 1fr';
     landingPageDiv.style.padding = '30px';
+
+    // Created a contianer for the landing page content so that we can make the display of the container to none when the user clicks on the about button
+    landingPageDivContainer.appendChild(landingPageDiv);
 
     // Calling the different functions for the content of the landing page
     introDiv();
@@ -16,7 +20,6 @@ export function landingPage() {
         introDiv.style.display = 'flex';
         introDiv.style.flexDirection = 'column';
         introDiv.style.marginTop = '15vh';
-        introDiv.style.gridArea = '1/1/2/2';
         landingPageDiv.appendChild(introDiv);
 
         // Calling the different functions for the introduction part of the restaurant
@@ -36,7 +39,8 @@ export function landingPage() {
         // Creating the paragraph for the introduction
         function introPara() {
             const introPara = document.createElement('p');
-            introPara.textContent = 'We are a restaurant which serves the best food in town. We have a variety of dishes which you can enjoy with your friends and family. We have a team of chefs who are experts in their field and will make sure that you have a great experience at our restaurant. Below, you can find the buttons that would help you navigate through our website.';
+            introPara.style.gridArea = '1/1/2/2';
+            introPara.innerHTML = 'We are a restaurant which serves the best food in town. We have' + "<br>" + 'a variety of dishes which you can enjoy with your friends and' + "<br>" + 'family. We have a team of chefs who are experts in their field and' + "<br>" + 'will make sure that you have a great experience at our restaurant.' + "<br>" + 'Below, you can find the buttons that would help you navigate' + "<br>" + 'through our website.';
             introPara.style.fontSize = '1.5em';
             introPara.style.textAlign = 'left';
             introPara.style.margin = '20px 0';
@@ -57,6 +61,7 @@ export function landingPage() {
             // Creating the about button
             function aboutButton() {
                 const aboutButton = document.createElement('button');
+                aboutButton.classList.add('aboutButton');
                 aboutButton.textContent = 'About';
                 aboutButton.style.backgroundColor = '#EC5228';
                 aboutButton.style.marginRight = '20px';
@@ -73,6 +78,7 @@ export function landingPage() {
             // Creating the menu button
             function menuButton() {
                 const menuButton = document.createElement('button');
+                menuButton.classList.add('menuButton');
                 menuButton.textContent = 'Menu';
                 menuButton.style.backgroundColor = '#EC5228';
                 menuButton.style.marginRight = '20px';
@@ -89,6 +95,7 @@ export function landingPage() {
             // Creating the contact button
             function contactButton() {
                 const contactButton = document.createElement('button');
+                contactButton.classList.add('contactButton');
                 contactButton.textContent = 'Contact';
                 contactButton.style.backgroundColor = '#EC5228';
                 contactButton.style.borderRadius = '5px';
@@ -103,6 +110,6 @@ export function landingPage() {
         }
     }
     
-    // Returning the landingPageDiv which contains the content for the landing page
-    return landingPageDiv;
+    // Returning the landingPageDivContainer which contains the content for the landing page
+    return landingPageDivContainer;
 }

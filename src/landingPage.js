@@ -37,7 +37,7 @@ export function landingPage() {
             const introPara = document.createElement('p');
             introPara.textContent = 'We are a restaurant which serves the best food in town. We have a variety of dishes which you can enjoy with your friends and family. We have a team of chefs who are experts in their field and will make sure that you have a great experience at our restaurant.';
             introPara.style.fontSize = '1.5em';
-            introPara.style.textAlign = 'center';
+            introPara.style.textAlign = 'right';
             introPara.style.margin = '20px 0';
             introDiv.appendChild(introPara);
         }

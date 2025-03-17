@@ -1,6 +1,6 @@
 import './style.css';
 import {navbar} from './navbar.js';
-import './about.js';
+import {about} from './about.js';
 import {landingPage} from './landingPage.js'
 
 const body = document.querySelector('body');
@@ -12,9 +12,7 @@ function style() {
     body.style.fontFamily = 'Arial, sans-serif';
     body.style.backgroundColor = '#EF9651';
     body.style.width = '100vw';
-    body.style.display = 'grid';
-    body.style.gridTemplateRows = '1fr 10fr 1fr';
-    body.style.position = 'fixed';
+    body.style.position = 'absolute';
 }
 
 
@@ -24,6 +22,10 @@ body.appendChild(headerNavBar);
 const landingPageContent = landingPage();
 body.appendChild(landingPageContent);
 
+const aboutContent = about();
+aboutContent.style.display = 'none';
+body.appendChild(aboutContent);
+
 const homeButton = document.querySelector('.homeButton');
 const aboutButton = document.querySelectorAll('.aboutButton');
 const menuButton = document.querySelectorAll('.menuButton');
@@ -31,12 +33,14 @@ const contactButton = document.querySelectorAll('.contactButton');
 
 homeButton.addEventListener('click', () => {
     landingPageContent.style.display = 'block';
+    aboutContent.style.display = 'none';
 }
 );
 
 aboutButton.forEach(button => {
     button.addEventListener('click', () => {
         landingPageContent.style.display = 'none';
+        aboutContent.style.display = 'block';
     });
 }
 );
